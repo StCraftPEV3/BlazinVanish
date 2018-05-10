@@ -1,4 +1,5 @@
 <?php
+ *//
  * Copyright (C) 2018 iiFlamiinBlaze
  *
  * iiFlamiinBlaze's plugins are licensed under MIT license!
