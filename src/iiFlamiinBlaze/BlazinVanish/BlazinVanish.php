@@ -1,12 +1,4 @@
 <?php
-/**
- *  ____  _            _______ _          _____
- * |  _ \| |          |__   __| |        |  __ \
- * | |_) | | __ _ _______| |  | |__   ___| |  | | _____   __
- * |  _ <| |/ _` |_  / _ \ |  | '_ \ / _ \ |  | |/ _ \ \ / /
- * | |_) | | (_| |/ /  __/ |  | | | |  __/ |__| |  __/\ V /
- * |____/|_|\__,_/___\___|_|  |_| |_|\___|_____/ \___| \_/
- *
  * Copyright (C) 2018 iiFlamiinBlaze
  *
  * iiFlamiinBlaze's plugins are licensed under MIT license!
@@ -48,11 +40,11 @@ class BlazinVanish extends PluginBase{
         if($command->getName() === "vanish"){
             if(!$sender instanceof Player){
                 $sender->sendMessage(self::PREFIX . TextFormat::RED . "Use this command in-game");
-                return false;
+                return true;
             }
             if(!$sender->hasPermission("vanish.command")){
                 $sender->sendMessage(self::PREFIX . TextFormat::RED . "You do not have permission to use this command");
-                return false;
+                return true;
             }
             if(empty($args[0])){
                 if(!in_array($sender->getName(), $this->vanish)){
@@ -66,7 +58,7 @@ class BlazinVanish extends PluginBase{
                     $sender->setNameTagVisible(true);
                     $sender->sendMessage($this->getConfig()->get("unvanished-message"));
                 }
-                return false;
+                return true;
             }
             if($this->getServer()->getPlayer($args[0])){
                 $player = $this->getServer()->getPlayer($args[0]);
@@ -85,7 +77,7 @@ class BlazinVanish extends PluginBase{
                 }
             }else{
                 $sender->sendMessage(self::PREFIX . TextFormat::RED . "Player not found");
-                return false;
+                return true;
             }
         }
         return true;
