@@ -7,7 +7,7 @@ main: iiFlamiinBlaze\BlazinVanish\BlazinVanish
 commands:
  vanish:
   permission: vanish.command
-  description: "Allows the player to vanish"
+  description: "Allows The Person To Use /vanish"
 permissions:
  vanish.command:
   default: op
